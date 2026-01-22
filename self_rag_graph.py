@@ -64,11 +64,9 @@ def check_doc_relevance(state: AgentState) -> Literal['relevant', 'irrelevant']:
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-dictionary = ['차량 소유자 -> 자동차 소유자']
-
 rewrite_prompt = PromptTemplate.from_template(f"""
-사용자의 질문을 보고, 우리의 사전을 참고해서 사용자의 질문을 변경해주세요 
-사전: {dictionary}                                           
+사용자의 질문을 보고, 올바른 질문으로 변경해주세요.
+                           
 질문: {{query}}
 """)
 
